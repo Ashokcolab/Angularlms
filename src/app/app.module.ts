@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RegistrationComponent } from './registration/registration.component';
@@ -19,6 +18,8 @@ import { PromptComponent } from './prompt/prompt.component';
 import { PatronpromptComponent } from './patronprompt/patronprompt.component';
 import { BorrowpromptComponent } from './borrowprompt/borrowprompt.component';
 import { ReturnpromptComponent } from './returnprompt/returnprompt.component';
+import { FormsModule } from '@angular/forms';
+import { from } from 'rxjs';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { ReturnpromptComponent } from './returnprompt/returnprompt.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -71,12 +71,12 @@
       </select>
 
       <label for="username">Username</label>
-      <input type="text" id="username" name="username" required>
+      <input type="text" id="username" name="username" required [(ngModel)]="loginObj.uname">
 
       <label for="password">Password</label>
-      <input type="password" id="password" name="password" required>
+      <input type="password" id="password" name="password" required [(ngModel)]="loginObj.pwd">
 
-      <button routerLink="/navpage" type="submit">Login</button>
+      <button  type="submit" (click)="Onlogin()">Login</button>
     </form>
   </div>
 </body>
