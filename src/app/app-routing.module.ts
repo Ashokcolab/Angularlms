@@ -12,6 +12,10 @@ import { PromptComponent } from './prompt/prompt.component';
 import { PatronpromptComponent } from './patronprompt/patronprompt.component';
 import { BorrowpromptComponent } from './borrowprompt/borrowprompt.component';
 import { ReturnpromptComponent } from './returnprompt/returnprompt.component';
+import { BookListComponent } from './book-list/book-list.component';
+import { DisplaybookComponent } from './displaybook/displaybook.component';
+import { PatronListComponent } from './patron-list/patron-list.component';
+import { UpdatebComponent } from './updateb/updateb.component';
 
 const routes: Routes = [
   {path:'',component:HomeComponent},
@@ -26,7 +30,11 @@ const routes: Routes = [
   {path:'prompt',component:PromptComponent},
   {path:'patronprompt',component:PatronpromptComponent},
   {path:'borrowprompt',component:BorrowpromptComponent},
-  {path:'returnprompt',component:ReturnpromptComponent}
+  {path:'returnprompt',component:ReturnpromptComponent},
+  {path:'book-list',component:BookListComponent},
+  {path:'displaybook',component:DisplaybookComponent},
+  {path:'patron-list',component:PatronListComponent},
+  {path:'updateb',component:UpdatebComponent}
  
   // {path:'',redirectTo:'/home',pathMatch:'full'},
   

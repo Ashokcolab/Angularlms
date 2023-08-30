@@ -16,6 +16,8 @@ export class RegistrationComponent implements OnInit {
     this.signupUsers.push(this.signupObj);
     localStorage.setItem('signupUsers',JSON.stringify(this.signupUsers));
     location.reload();
+    alert("Registered successfully Go back and Login");
+
   }
   ngOnInit(): void {
     const localData=localStorage.getItem('signupUsers');

@@ -54,20 +54,19 @@
     <div class="container">
       <nav>
        
-        <a href="#">Book List</a>
-        <a href="#">Patron List</a>
+        <a routerLink="/book-list">Book List</a>
+        <a routerLink="/patron-list">Patron List</a>
         <a routerLink="/addbook">Add Book</a>
         <a routerLink="/addpatron">Add Patron</a>
         <a routerLink="/borrowbook">Borrow Book</a>
         <a routerLink="/returnbook">Return Book</a>
         <div class="user">
-          <span class="username">John Doe</span>
+          <span class="username"><a routerLink="/updateb">{{userName}}</a></span>
           <span routerLink="/home" class="logout">Log Out</span>
         </div>
       </nav>
     </div>
   </header>
- 
 <div class="container">
     <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh5_-oF_80hjU7UuJQS9IrgX_7bjOqpTlR5ADVsdHv0TCoSGgrGSf7_vtob_Lh8qFfq9iZdQgVnTcFZhsViC79CadxPp3MseRRbRmg8XYZcqCEU55YTDfoL8htLZQTpobCCQfU5GYBc9dw5rImKnVChmAhOpOlArqK7a9fe1MW_UJjFHTVM6g4FNxDbSQ/s2048/Stockholm%20public%20library%202.jpeg" alt="Library" style="max-width: 100%; max-height: calc(100vh - 60px); width: 100%;">
   </div>

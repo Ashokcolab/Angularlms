@@ -20,6 +20,11 @@ import { BorrowpromptComponent } from './borrowprompt/borrowprompt.component';
 import { ReturnpromptComponent } from './returnprompt/returnprompt.component';
 import { FormsModule } from '@angular/forms';
 import { from } from 'rxjs';
+import { BooklistComponent } from './booklist/booklist.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import { MatListModule } from '@angular/material/list';
+import { DisplaybookComponent } from './displaybook/displaybook.component';
 
 @NgModule({
   declarations: [
@@ -39,12 +44,17 @@ import { from } from 'rxjs';
     PromptComponent,
     PatronpromptComponent,
     BorrowpromptComponent,
-    ReturnpromptComponent
+    ReturnpromptComponent,
+    BooklistComponent,
+    DisplaybookComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    MatPaginatorModule,
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

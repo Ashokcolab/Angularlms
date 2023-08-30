@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./updateb.component.css']
 })
 export class UpdatebComponent {
+  onupdate(){
+    alert("Updated details successfully");
+  }
 
 }

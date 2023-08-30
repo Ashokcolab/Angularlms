@@ -75,12 +75,12 @@
       <input type="text" id="id" name="id" required>
 
       <label for="name">Name</label>
-      <input type="text" id="name" name="name" required>
+      <input type="text" id="name" name="name" required [(ngModel)]="patobj.pname">
 
       <label for="borrowed_books">Borrowed Books (A collection of books)</label>
       <textarea id="borrowed_books" name="borrowed_books" rows="4"></textarea>
 
-      <button routerLink="/patronprompt" type="submit">Add Patron</button>
+      <button routerLink="/patronprompt" (click)="onadd()" type="submit">Add Patron</button>
     </form>
   </div>
 </body>

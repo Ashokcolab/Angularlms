@@ -25,6 +25,8 @@ export class LoginComponent implements OnInit {
     
     const isuserexist= this.larray.find(m=>m.userName==this.loginObj.uname && m.password==this.loginObj.pwd);
       if(isuserexist!=undefined){
+        console.log("loginObj",this.loginObj);
+        localStorage.setItem("current_user",this.loginObj.uname);
         
         alert("user login successfully");
       }else{
