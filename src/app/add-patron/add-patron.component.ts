@@ -14,6 +14,7 @@ export class AddPatronComponent implements OnInit {
     this.addpat.push({ patname: this.patobj.pname}); 
     localStorage.setItem('addpat', JSON.stringify(this.addpat));
     location.reload();
+    alert("added patron successfully go back");
   }
 
   ngOnInit(): void {

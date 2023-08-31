@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+// import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-book',
@@ -11,12 +13,15 @@ export class AddBookComponent implements OnInit {
     bname: ''
   };
 
-  constructor() { }
+  constructor(private route:Router) { }
 
   onadd() {
     this.addusers.push({ bookname: this.addobj.bname }); 
     localStorage.setItem('addusers', JSON.stringify(this.addusers));
+    alert("Added book successfully go back")
     location.reload();
+    // this.route.navigate(['/navpage']);
+    
   }
 
   ngOnInit(): void {

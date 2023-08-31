@@ -1,6 +1,5 @@
-import { Component,OnInit } from '@angular/core';
-import { RegistrationComponent } from '../registration/registration.component';
-import { RouterLink } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -8,30 +7,33 @@ import { RouterLink } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  larray:any[]=[];
-  loginObj:any={
-    uname:'',
-    pwd:''
+  larray: any[] = [];
+  loginObj: any = {
+    uname: '',
+    pwd: ''
   };
-  constructor(){
-  }
+
+  constructor(private router: Router) {}
+
   ngOnInit(): void {
-      const localData=localStorage.getItem('signupUsers');
-      if(localData!=null){
-      this.larray=JSON.parse(localData);
-  }
-}
-  Onlogin(){
-    
-    const isuserexist= this.larray.find(m=>m.userName==this.loginObj.uname && m.password==this.loginObj.pwd);
-      if(isuserexist!=undefined){
-        console.log("loginObj",this.loginObj);
-        localStorage.setItem("current_user",this.loginObj.uname);
-        
-        alert("user login successfully");
-      }else{
-        alert("invalid credentials");
-      }
+    const localData = localStorage.getItem('signupUsers');
+    if (localData) {
+      this.larray = JSON.parse(localData);
     }
   }
 
+  Onlogin(): void {
+    const isUserExist = this.larray.find(
+      (user: any) =>
+        user.userName === this.loginObj.uname && user.password === this.loginObj.pwd
+    );
+
+    if (isUserExist) {
+      localStorage.setItem('current_user', this.loginObj.uname);
+      alert('User logged in successfully');
+      this.router.navigate(['/navpage']); // Redirect to 'navpage' on successful login
+    } else {
+      alert('Invalid credentials');
+    }
+  }
+}

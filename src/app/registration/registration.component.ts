@@ -17,6 +17,7 @@ export class RegistrationComponent implements OnInit {
     localStorage.setItem('signupUsers',JSON.stringify(this.signupUsers));
     location.reload();
     alert("Registered successfully Go back and Login");
+    // this.router.navigate(['/navpage']);
 
   }
   ngOnInit(): void {
