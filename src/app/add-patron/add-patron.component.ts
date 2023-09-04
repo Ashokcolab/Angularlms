@@ -8,7 +8,8 @@ import { Component,OnInit} from '@angular/core';
 export class AddPatronComponent implements OnInit {
   addpat: any[] = [];
   patobj: any = {
-    pname: ''
+    pname: '',
+    id:''
   };
   onadd() {
     this.addpat.push({ patname: this.patobj.pname}); 

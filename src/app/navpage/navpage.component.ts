@@ -11,7 +11,7 @@ import { BookListComponent } from '../book-list/book-list.component';
 export class NavpageComponent{
   
   userName:any;
-  ngOnInit(){;
+  ngOnInit(){
     this.userName = localStorage.getItem('current_user');
     console.log("userName",this.userName);
   }

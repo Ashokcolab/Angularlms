@@ -61,20 +61,20 @@
 <body>
   <div class="book-form">
     <h2>Add New Book</h2>
-    <form>
+    <form #ngForm="ngForm" (ngSubmit)="onadd()" nonvalidate>
       <label for="title">Title</label>
-      <input type="text" id="title" name="title" required [(ngModel)]="addobj.bname">
-
+      <input type="text" id="title" class="form-control" name="title" required [(ngModel)]="addobj.bname" (ngModelChange)="ontitle()">
+      <small *ngIf="showtitle"><p style="color: red;">Title can only have alphanumeric</p></small>
       <label for="author">Author</label>
-      <input type="text" id="author" name="author" required>
-
+      <input type="text" id="author" class="form-control" name="author" required [(ngModel)]="addobj.author" (ngModelChange)="onauthor()">
+      <small *ngIf="showauthor"><p style="color: red;">should contain alphabets****</p></small>
       <label for="isbn">ISBN</label>
-      <input type="text" id="isbn" name="isbn" required>
-
+      <input type="text" id="isbn"class="form-control" name="isbn" required [(ngModel)]="addobj.isbn" (ngModelChange)="onisbn()">
+      <small *ngIf="showisbn"><p style="color: red;">should contain digits**</p></small>
       <label for="Quantity">Quantity</label>
-      <input type="text" id="Quantity" name="Quantity" required>
-
-      <button  (click)="onadd()" type="button">Add Book</button>
+      <input type="text" id="Quantity" class="form-control" name="Quantity" required [(ngModel)]="addobj.quantity" (ngModelChange)="onq()">
+      <small *ngIf="showqua"><p style="color: red;">should contain digits only**</p></small>
+      <button  [disabled]="ngForm.invalid" routerLink="/navpage" type="submit">Add Book</button>
     </form>
   </div>
 </body>
