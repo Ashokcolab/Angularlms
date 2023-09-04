@@ -32,6 +32,7 @@
   input[type="text"] {
     width: 100%;
     padding: 10px;
+    margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 3px;
   }
@@ -52,16 +53,18 @@
 <body>
   <div class="container">
     <h2>Borrow a Book</h2>
-    <form>
+    <form #ngForm="ngForm" nonvalidate>
       <div class="form-group">
         <label for="name">Your Name</label>
-        <input type="text" id="name" name="name" required>
+        <input type="text" id="name" name="name" required class="form-control" ngModel [(ngModel)]="borrowobj.name" (ngModelChange)="onname()" >
+        <small *ngIf="showname"><p style="color: red;">name contains alphabets**</p></small>
       </div>
       <div class="form-group">
         <label for="book">Book Title</label>
-        <input type="text" id="book" name="book" required>
+        <input type="text" id="book" name="book" required ngModel [(ngModel)]="borrowobj.title" (ngModelChange)="ontitle()">
+        <small *ngIf="showtitle"><p style="color: red;">title contains only alphabets**</p></small>
       </div>
-      <button routerLink="/borrowprompt" type="submit">Submit</button>
+      <button routerLink="/borrowprompt" [disabled]="ngForm.invalid" type="submit">Submit</button>
     </form>
   </div>
 </body>

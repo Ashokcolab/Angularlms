@@ -64,7 +64,7 @@
 <body>
   <div class="registration-form">
     <h2>Registration Form</h2>
-    <form  #ngForm="ngForm" (ngSubmit)="onSignUp()" novalidate>
+    <form  #ngForm="ngForm"  novalidate>
       <label for="name">Name*</label>
       <input type="text" id="name" #name="ngModel"  class="form-control" name="name" required [(ngModel)]="signupObj.userName" (ngModelChange)="onname()">
       <small *ngIf="shownameError"><p style="color: red;">give valid name**</p></small>
@@ -87,7 +87,7 @@
 
       
 
-      <button type="submit" routerLink="/login" [disabled]="ngForm.invalid">Register</button>
+      <button type="submit" (click)="onSignUp()" routerLink="/login" [disabled]="ngForm.invalid">Register</button>
     </form>
   </div>
 </body>

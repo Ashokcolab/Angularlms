@@ -70,16 +70,17 @@
 <body>
   <div class="patron-form">
     <h2>Add New Patron</h2>
-    <form #ngForm="ngForm">
-      <label for="id">ID (Unique)</label>
-      <input type="text" id="id" name="id" class="form-control" ngModel #name required>
+    <form #ngForm="ngForm"  nonvalidate>
+      <label for="id">ID</label>
+      <input type="text" id="id" #id="ngModel" name="id" class="form-control" ngModel  required (ngModelChange)="onid()" [(ngModel)]="patobj.id">
+      <small *ngIf="showid"><p style="color:red">id should contain digits</p></small>
       <label for="name">Name</label>
-      <input type="text" id="name" name="name" ngModel class="form-control" required [(ngModel)]="patobj.pname">
-
+      <input type="text" id="name" #name="ngModel" name="name" ngModel class="form-control" required [(ngModel)]="patobj.pname" (ngModelChange)="onname()">
+      <small *ngIf="showname"><p style="color: red;">name can contain alpanumeric**</p></small>
       <label for="borrowed_books">Borrowed Books (A collection of books)</label>
       <textarea id="borrowed_books" ngModel class="form-control" name="borrowed_books" rows="4"></textarea>
 
-      <button routerLink="/patronprompt" (click)="onadd()" type="submit">Add Patron</button>
+      <button (click)="onadd()" routerLink="/navpage" [disabled]="ngForm.invalid" type="submit">Add Patron</button>
     </form>
   </div>
 </body>

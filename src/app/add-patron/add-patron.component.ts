@@ -11,6 +11,16 @@ export class AddPatronComponent implements OnInit {
     pname: '',
     id:''
   };
+  showid=false;
+  onid(){
+    const idpattern=/^[0-9]+$/;
+    this.showid=!idpattern.test(this.patobj.id);
+  }
+  showname=false;
+  onname(){
+    const namepattern=/^[a-zA-Z]+$/;
+    this.showname=!namepattern.test(this.patobj.pname);
+  }
   onadd() {
     this.addpat.push({ patname: this.patobj.pname}); 
     localStorage.setItem('addpat', JSON.stringify(this.addpat));

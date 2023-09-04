@@ -24,7 +24,7 @@ export class AddBookComponent implements OnInit {
   }
   showqua=false;
   onq(){
-    const qpatter=/^[0-9]+$/;
+    const qpatter=/^([1-9])([0-9]*)$/;
     this.showqua=!qpatter.test(this.addobj.quantity);
   }
   showisbn=false;
